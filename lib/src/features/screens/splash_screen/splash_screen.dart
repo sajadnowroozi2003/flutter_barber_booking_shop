@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_barber_app/src/constants/colors.dart';
 import 'package:flutter_barber_app/src/constants/image_strings.dart';
 import 'package:flutter_barber_app/src/constants/sizes.dart';
 import 'package:flutter_barber_app/src/constants/text_strings.dart';
+import 'package:flutter_barber_app/src/features/screens/welcome/welcome_screen.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  bool animate = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    startAnimation();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +27,15 @@ class SplashScreen extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            const Positioned(
-              top: 0,
-              left: 0,
+            AnimatedPositioned(
+              duration: const Duration(milliseconds: 1600),
+              top: animate ? 0 : -30,
+              left: animate ? 0 : -30,
               child: Image(
                 image: AssetImage(tSplashTopIcon),
               ),
             ),
-            const Positioned(
+            Positioned(
               top: 135,
               left: tDefaultSize,
               child: Column(
@@ -43,8 +59,36 @@ class SplashScreen extends StatelessWidget {
                 image: AssetImage(tSplashImage),
               ),
             ),
+            Positioned(
+              bottom: 40,
+              right: tDefaultSize,
+              child: Container(
+                width: tSplashContainerSize,
+                height: tSplashContainerSize,
+                decoration: BoxDecoration(
+                  color: tPrimaryColor,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              ),
+            ),
           ],
         ),
+      ),
+    );
+  }
+
+  Future startAnimation() async {
+    await Future.delayed(
+      Duration(microseconds: 500),
+    );
+    setState(() => animate = true);
+    await Future.delayed(
+      Duration(seconds: 3),
+    );
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => WelcomeScreen(),
       ),
     );
   }
