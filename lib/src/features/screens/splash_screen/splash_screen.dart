@@ -37,31 +37,37 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
-              top: 135,
+              top: 120,
               left: animate ? tDefaultSize : -80,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    tAppName,
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    tAppTagLine,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
-                  ),
-                ],
+              child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 1600),
+                  opacity: animate ? 1 : 0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      tAppName,
+                      style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      tAppTagLine,
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+                    ),
+                  ],
+                ),
               ),
             ),
-            Positioned(
-              bottom: 20,
+            AnimatedPositioned(
+                duration: const Duration(milliseconds: 2400),
+              bottom: animate ? 50 : 0,
               left: 0,
               child: Image(
                 image: AssetImage(tSplashImage),
               ),
             ),
-            Positioned(
-              bottom: 40,
+            AnimatedPositioned(
+               duration: const Duration(milliseconds: 2400),
+              bottom: animate ? 100 : 0,
               right: tDefaultSize,
               child: Container(
                 width: tSplashContainerSize,
