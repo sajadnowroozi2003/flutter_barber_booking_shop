@@ -4,7 +4,6 @@ import 'package:flutter_barber_app/src/constants/image_strings.dart';
 import 'package:flutter_barber_app/src/constants/sizes.dart';
 import 'package:flutter_barber_app/src/constants/text_strings.dart';
 import 'package:flutter_barber_app/src/features/authentication/controllers/splash_screen_controller.dart';
-import 'package:flutter_barber_app/src/features/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
