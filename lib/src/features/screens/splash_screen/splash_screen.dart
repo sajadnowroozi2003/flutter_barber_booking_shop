@@ -35,9 +35,10 @@ class _SplashScreenState extends State<SplashScreen> {
                 image: AssetImage(tSplashTopIcon),
               ),
             ),
-            Positioned(
+            AnimatedPositioned(
+              duration: const Duration(milliseconds: 1600),
               top: 135,
-              left: tDefaultSize,
+              left: animate ? tDefaultSize : -80,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
