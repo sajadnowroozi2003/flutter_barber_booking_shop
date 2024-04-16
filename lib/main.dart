@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_barber_app/src/features/screens/splash_screen/splash_screen.dart';
+import 'package:flutter_barber_app/src/features/screens/splashScreen/splash_screen.dart';
+
 import 'package:flutter_barber_app/src/utils/Theme/widget_themes/Theme.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 

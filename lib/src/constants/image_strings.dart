@@ -1,2 +1,2 @@
-const String tSplashTopIcon = "assets/images/icon3.png";
-const String tSplashImage = "assets/images/barber7.png";
+const String tSplashTopIcon = "assets/images/Topicon.png";
+const String tSplashImage = "assets/images/BaseImage.png";
